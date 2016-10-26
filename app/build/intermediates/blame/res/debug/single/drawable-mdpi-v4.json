@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\Laxman Jangley\\Downloads\\android-ndk-master\\android-ndk-master\\Metaballs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\icon.png",
+        "source": "C:\\Users\\Laxman Jangley\\Downloads\\android-ndk-master\\android-ndk-master\\Metaballs\\app\\src\\main\\res\\drawable-mdpi\\icon.png"
+    },
+    {
+        "merged": "H:\\btp\\Metaballs\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\icon.png",
+        "source": "H:\\btp\\Metaballs\\app\\src\\main\\res\\drawable-mdpi\\icon.png"
+    }
+]

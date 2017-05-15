@@ -52,7 +52,7 @@ ADDED from H:\btp\Metaballs\app\src\main\AndroidManifest.xml:14:2-40
 		ADDED from H:\btp\Metaballs\app\src\main\AndroidManifest.xml:14:12-38
 		INJECTED from H:\btp\Metaballs\app\src\main\AndroidManifest.xml
 		INJECTED from H:\btp\Metaballs\app\src\main\AndroidManifest.xml
-uses-feature#0x00030000
+uses-feature#0x00030001
 ADDED from H:\btp\Metaballs\app\src\main\AndroidManifest.xml:15:2-64
 	android:glEsVersion
 		ADDED from H:\btp\Metaballs\app\src\main\AndroidManifest.xml:15:16-48

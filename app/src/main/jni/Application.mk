@@ -7,6 +7,6 @@
 # copies and copies may only be made to the extent permitted
 # by a licensing agreement from ARM Limited.
 #
-APP_ABI := armeabi armeabi-v7a x86 x86_64
-APP_PLATFORM := android-18
+APP_ABI := armeabi-v7a 
+APP_PLATFORM := android-21
 APP_STL := stlport_static

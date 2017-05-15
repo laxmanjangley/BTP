@@ -1,21 +1,24 @@
-/*
- * This confidential and proprietary software may be used only as
- * authorised by a licensing agreement from ARM Limited
- * (C) COPYRIGHT 2014 ARM Limited
- * ALL RIGHTS RESERVED
- * The entire notice above must be reproduced on all authorised
- * copies and copies may only be made to the extent permitted
- * by a licensing agreement from ARM Limited.
- */
-
 #ifndef SHADER_H
 #define SHADER_H
 
-#include <GLES3/gl3.h>
 #include <cstdio>
 #include <cstdlib>
-#include <android/log.h>
 
+#ifdef PCIMPL
+#include <GL/glew.h>
+#define LOGE(...) fprintf(stderr,__VA_ARGS__)
+#define GL_CHECK(x) \
+    x; \
+    { \
+        GLenum glError = glGetError(); \
+        if(glError != GL_NO_ERROR && glError != GL_INVALID_ENUM) { \
+            LOGE("glGetError() = %i (0x%.8x) at %s:%i\n", glError, glError, __FILE__, __LINE__); \
+            exit(1); \
+        } \
+    }
+#else
+#define LOG_TAG "libNative"
+#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 #define GL_CHECK(x) \
     x; \
     { \
@@ -25,6 +28,10 @@
             exit(1); \
         } \
     }
+#include <GLES3/gl31.h>
+#include <GLES2/gl2ext.h>
+#include <android/log.h>
+#endif
 
 namespace MaliSDK
 {

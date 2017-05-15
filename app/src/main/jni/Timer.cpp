@@ -23,6 +23,8 @@ namespace MaliSDK
         QueryPerformanceFrequency(&l);
         invFreq = 1.0f / l.QuadPart;
         reset();
+
+        oldTime = getTime();
     }
 
     void Timer::reset()
@@ -30,6 +32,8 @@ namespace MaliSDK
         LARGE_INTEGER l;
         QueryPerformanceCounter(&l);
         resetStamp = (((double)l.QuadPart) * invFreq);
+
+        oldTime = getTime();
     }
 
     float Timer::getTime()
@@ -37,6 +41,13 @@ namespace MaliSDK
         LARGE_INTEGER l;
         QueryPerformanceCounter(&l);
         return (float)(((double)l.QuadPart) * invFreq - resetStamp);
+    }
+
+    float Timer::getDelta(){
+        float now = getTime();
+        float delta = now - oldTime;
+        oldTime = now;
+        return delta;
     }
 }
 #else
@@ -55,11 +66,15 @@ namespace MaliSDK
         currentTime.tv_usec = 0;
 
         reset();
+
+        oldTime = getTime();
     }
 
     void Timer::reset()
     {
         gettimeofday(&startTime, NULL);
+
+        oldTime = getTime();
     }
 
     float Timer::getTime()
@@ -68,6 +83,12 @@ namespace MaliSDK
         float seconds = (currentTime.tv_sec - startTime.tv_sec);
         float milliseconds = (float(currentTime.tv_usec - startTime.tv_usec)) / 1000000.0f;
         return seconds + milliseconds;
+    }
+    float Timer::getDelta(){
+        float now = getTime();
+        float delta = now - oldTime;
+        oldTime = now;
+        return delta;
     }
 }
 #endif

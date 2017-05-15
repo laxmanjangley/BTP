@@ -1,2 +1,0 @@
-set solib-search-path H:/btp/Metaballs/app/src/main/obj/local/x86
-directory C:/androidNDK/android-ndk-r12b/build//../platforms/android-18/arch-x86/usr/include H:/btp/Metaballs/app/src/main/jni/../../common_native/inc/ H:/btp/Metaballs/app/src/main/jni/../../common_native/inc/mali/ C:/androidNDK/android-ndk-r12b/build//../sources/cxx-stl/stlport/stlport C:/androidNDK/android-ndk-r12b/build//../sources/cxx-stl//gabi++/include

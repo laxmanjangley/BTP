@@ -1,0 +1,7 @@
+List
+-- marching cubes
+- implement geo metry shader
+- add normal to scalar field
+-- physics
+- cpu space ds
+- shader code to get all neighbourhood particles position and velocity
